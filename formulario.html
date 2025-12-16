@@ -66,21 +66,23 @@
       border-color: #0D47A1;
     }
 
-    button {
-      padding: 14px;
-      border-radius: 10px;
-      border: none;
-      background: #0D47A1;
-      color: #fff;
-      font-weight: 500;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
+ button {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #0D47A1, #1565C0, #42A5F5);
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.5s ease, transform 0.2s ease;
+}
 
-    button:hover {
-      background: #1565C0;
-    }
+button:hover {
+  background: linear-gradient(135deg, #1565C0, #42A5F5, #0D47A1);
+  transform: scale(1.05);
+}
+
 
     a.back {
       display: block;
@@ -154,7 +156,8 @@ form.addEventListener('submit', function(e) {
     method: 'POST',
     body: formData,
     headers: { 'Accept': 'application/json' }
-  }).then(response => {
+  })
+  .then(response => {
     if (response.ok) {
       form.reset();
       confirmation.classList.add('show');
@@ -165,12 +168,16 @@ form.addEventListener('submit', function(e) {
     } else {
       alert('Hubo un error, intenta de nuevo.');
     }
-  }).catch(() => {
+  })
+  .catch(() => {
     alert('Hubo un error, intenta de nuevo.');
   });
 });
+
 
 </script>
 
 </body>
 </html>
+
+
