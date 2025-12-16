@@ -223,6 +223,50 @@ footer {
   }
 }
 
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Siempre 4 en escritorio */
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet/móvil */
+  }
+}
+
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+  }
+}
+
+.card {
+  position: relative; /* necesario para posicionar el label */
+}
+
+.small-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  font-size: 10px; /* más pequeño que antes */
+  font-weight: 500;
+  color: #2ecc71; /* verde */
+  background: none;
+  padding: 0;
+}
+
+.shipping-label {
+  position: absolute;
+  right: 12px;
+  bottom: 38px; /* un poco más arriba de “Personalizable” */
+  font-size: 10px; /* más pequeño */
+  font-weight: 500;
+  color: #bbb; /* gris claro */
+  background: none; /* quitar burbuja */
+  padding: 0;
+}
+
   </style>
 </head>
 <body>
@@ -246,29 +290,86 @@ footer {
 </div>
 
 
-  <section id="catalogo" class="fade-in">
-    <h3>Productos destacados</h3>
-    <div class="cards">
-      <div class="card">
-        <img alt="producto" />
-        <h4>Soporte móvil</h4>
-        <p>Soporte impreso en PLA, resistente y minimalista.</p>
-        <a href="#" class="btn btn-primary">Ver producto</a>
-      </div>
-      <div class="card">
-        <img alt="producto" />
-        <h4>Organizador escritorio</h4>
-        <p>Ideal para cables, lápices y accesorios.</p>
-        <a href="#" class="btn btn-primary">Ver producto</a>
-      </div>
-      <div class="card">
-        <img alt="producto" />
-        <h4>Figura decorativa</h4>
-        <p>Pieza decorativa personalizada.</p>
-        <a href="#" class="btn btn-primary">Ver producto</a>
-      </div>
+<section id="catalogo" class="fade-in">
+  <h3>Productos destacados</h3>
+  <div class="cards">
+    <!-- Producto 1 -->
+    <div class="card">
+      <img src="https://media.cgtrader.com/variants/030uc4pdp3lmmmlm0isqdm9jbreb/78add9c2f02fbd73a43ffb3970be38683c5f15eff6ca849dc78c644f4ff9ce1b/magamed%20uchun.webp" alt="Soporte móvil" />
+      <h4>Soporte móvil</h4>
+      <p>Soporte impreso en PLA, resistente y minimalista.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <span class="custom-label shipping-label">Envío disponible</span>
     </div>
-  </section>
+
+    <!-- Producto 2 -->
+    <div class="card">
+      <img src="https://makerworld.bblmw.com/makerworld/model/DSM00000001431054/design/2025-05-18_972745f0554be8.png?x-oss-process=image/resize,w_1000/format,webp" alt="Organizador escritorio" />
+      <h4>Organizador escritorio</h4>
+      <p>Ideal para cables, lápices y accesorios.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <div class="small-label">Personalizable</div>
+      <span class="custom-label shipping-label">Envío disponible</span>
+    </div>
+
+    <!-- Producto 3 -->
+    <div class="card">
+      <img src="https://images.squarespace-cdn.com/content/v1/67a4dfbf3127d63918313f46/48368308-9dee-441d-914e-ce4e71e27bc0/_MG_8068.jpg" alt="Figura decorativa" />
+      <h4>Figura decorativa</h4>
+      <p>Pieza decorativa personalizada
+        al gusto.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <div class="small-label">Personalizable</div>
+      <span class="custom-label shipping-label">Envío disponible</span>
+    </div>
+
+    <!-- Producto 4 -->
+    <div class="card">
+      <img src="c:\Users\CHUWI\Downloads\1copo.PNG" alt="Decoracion navideña" />
+      <h4>Decoración navidad</h4>
+      <p>Copo de nieve impreso en la mejor calidad.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <span class="custom-label shipping-label">Envío disponible</span>
+    </div>
+
+    <!-- NUEVOS PRODUCTOS -->
+    <div class="card">
+      <img src="https://maquetren.net/wp-content/uploads/2018/07/348-Kit-en-impresion-3D-Sin-montar.jpg" alt="Producto nuevo 1" />
+      <h4>Maquetas trenes</h4>
+      <p>Maqueta para trenes, alto detalle.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <span class="custom-label shipping-label">Venta en mano</span>
+    </div>
+
+    <div class="card">
+      <img src="https://media.printables.com/media/prints/4070/images/26377_d636adda-7519-43e0-be16-5be6d01b4ef1/thumbs/inside/1280x960/jpg/untitled345.webp" alt="Producto nuevo 2" />
+      <h4>Llavero personalizable</h4>
+      <p>Llavero al gusto.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <div class="small-label">Personalizable</div>
+      <span class="custom-label shipping-label">Envío disponible</span>
+    </div>
+
+    <div class="card">
+      <img src="https://pic2-cdn.creality.com/comp/model/e5b3c30d11bb403db06c1d53b0fc8377.webp" alt="Producto nuevo 3" />
+      <h4>Regalo San Valentín</h4>
+      <p>Regalo ideal para san valentín.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <div class="small-label">Personalizable</div>
+      <span class="custom-label shipping-label">Envío disponible</span>
+    </div>
+
+    <div class="card">
+      <img src="https://www.3dforprint.com/modelos/2236/soda-bottle-opener1_medium.jpg" alt="Producto nuevo 4" />
+      <h4>Abridor de botellas</h4>
+      <p>Ideal para la tercera edad.</p>
+      <a href="#" class="btn btn-primary">Ver producto</a>
+      <span class="custom-label shipping-label">Envío disponible</span>
+    </div>
+
+  </div>
+</section>
+
 
 <section id="contactos" class="fade-in">
   <h3>Contacto</h3>
@@ -360,5 +461,7 @@ heroObserver.observe(hero);
 
 </body>
 </html>
+
+
 
 
